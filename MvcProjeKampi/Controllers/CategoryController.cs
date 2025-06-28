@@ -20,7 +20,6 @@ namespace MvcProjeKampi.Controllers
         {
             return View();
         }
-
         public ActionResult GetCategoryList()
         {
             var categoryvalues = cm.GetList();
