@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concrete.Skill
+
+@{
+    ViewBag.Title = "AddSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Yetenek Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddSkill", "Skills", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Yetenek Adı")
+        @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yetenek Seviye")
+        @Html.TextBoxFor(x => x.SkillLevel, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+}

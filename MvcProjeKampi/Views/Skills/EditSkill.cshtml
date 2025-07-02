@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.Skill
+
+@{
+    ViewBag.Title = "EditSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yetenek Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("EditSkill", "Skills", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x=>x.SkillID)
+        @Html.Label("Yetenek Adı")
+        @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yetenek Seviye")
+        @Html.TextBoxFor(x => x.SkillLevel, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
